@@ -5,40 +5,24 @@
     <form (ngSubmit)="guardarProducto(producto)">
       <div class="form-group">
         <label for="nombre">Nombre</label>
-        <input
-          id="nombre"
-          [(ngModel)]="producto.nombre"
-          name="nombre"
-          required
-          class="form-input"
-        />
+        <input id="nombre" [(ngModel)]="producto.nombre" name="nombre" required class="form-input" />
       </div>
 
       <div class="form-group">
         <label for="precio">Precio</label>
-        <input
-          type="number"
-          id="precio"
-          [(ngModel)]="producto.precio"
-          name="precio"
-          required
-          class="form-input"
-        />
+        <input type="number" id="precio" [(ngModel)]="producto.precio" name="precio" required class="form-input" />
       </div>
 
       <div class="form-group">
         <label for="descripcion">Descripción</label>
-        <textarea
-          id="descripcion"
-          [(ngModel)]="producto.descripcion"
-          name="descripcion"
-          class="form-textarea"
-        ></textarea>
+        <textarea id="descripcion" [(ngModel)]="producto.descripcion" name="descripcion"
+          class="form-textarea"></textarea>
       </div>
 
-      <button type="submit" class="btn guardar">
-        {{ esEdicion ? 'Actualizar' : 'Guardar' }}
-      </button>
+      <p-button type="submit" [label]="esEdicion ? 'Actualizar' : 'Guardar'"
+        [icon]="esEdicion ? 'pi pi-refresh' : 'pi pi-save'" severity="success">
+      </p-button>
+
     </form>
   </div>
 </ng-container>

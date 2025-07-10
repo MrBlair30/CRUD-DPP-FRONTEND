@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductsList } from './products-list/products-list';
 import { ProductForm } from './product-form/product-form';
 import { HttpClientModule } from '@angular/common/http';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ButtonModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

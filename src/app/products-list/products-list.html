@@ -1,5 +1,4 @@
 <h2 class="titulo">📦 Lista de Productos</h2>
-
 <div class="tabla-container">
   <ng-container *ngIf="productos$ | async as productos; else cargando">
     <table class="tabla-productos" *ngIf="productos.length > 0; else sinProductos">
@@ -17,8 +16,12 @@
           <td>{{ producto.precio | currency:'USD' }}</td>
           <td>{{ producto.descripcion }}</td>
           <td class="acciones">
-            <button class="btn editar" (click)="editarProducto(producto)">Editar</button>
-            <button class="btn eliminar" (click)="eliminarProducto(producto)">Eliminar</button>
+            <p-button label="Editar" icon="pi pi-pencil" severity="info"
+              (onClick)="editarProducto(producto)">
+            </p-button>
+            <p-button label="Eliminar" icon="pi pi-trash" severity="danger"
+              (onClick)="eliminarProducto(producto)">
+            </p-button>
           </td>
         </tr>
       </tbody>
@@ -35,5 +38,6 @@
 </div>
 
 <div class="boton-agregar">
-  <button routerLink="/nuevo" class="btn agregar">+ Agregar Producto</button>
+  <p-button label="Agregar Producto" icon="pi pi-plus" severity="success"  [routerLink]="['/nuevo']">
+  </p-button>
 </div>
